@@ -12,16 +12,17 @@ const Meals = () => {
     }, [])
     return (
         <div className="row">
-            <div className="col">
-                {
-                    meals.map(item =>
-                        <div>
-                            <Link to={`/mealDetails/${item.id}`}><img src={item.image} alt=""/></Link>
-                            <Link to={`/mealDetails/${item.id}`}>{item.title}</Link>
-                        </div>
-                    )
-                }
-            </div>
+
+            {
+                meals.map(item =>
+                    <div className="col">
+                        <Link key={item.idMeals} to={`/mealDetails/${item.id}`}>
+                            <img src={item.image} alt="" className="img"/></Link>
+                        <Link to={`/mealDetails/${item.id}`}>{item.title}</Link>
+                    </div>
+                )
+            }
+
         </div>
     )
 }

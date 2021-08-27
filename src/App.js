@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route} from "react-router-dom"
+import {BrowserRouter as Router, Route} from "react-router-dom"
 import Meals from './Meals'
 import MealDetails from "./MealDetails";
 
@@ -7,10 +7,12 @@ import MealDetails from "./MealDetails";
 const App = () => {
 
     return (
-        <BrowserRouter>
-            <Route exact path="/"><Meals/></Route>
-            <Route path="/mealDetails/:id"><MealDetails/></Route>
-        </BrowserRouter>
+        <div className="container">
+            <Router>
+                <Route exact path="/"><Meals/></Route>
+                <Route path="/mealDetails/:id"><MealDetails/></Route>
+            </Router>
+        </div>
     )
 }
 
